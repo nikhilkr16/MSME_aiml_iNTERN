@@ -60,6 +60,7 @@ y = df['Survived']
 print("Dataset is ready for machine learning!")
 print(f"Shape: {X.shape}")
 print(f"Features: {list(X.columns)}")
+---
 
 | Description           | Screenshot                                                                                       |
 | --------------------- | ------------------------------------------------------------------------------------------------ |
@@ -81,7 +82,6 @@ y: Target variable (Survived)
 Shape and features printed after processing
 
 
----
 
 📬 Contact
 Feel free to raise an issue or connect for questions, feedback, or collaborations.
