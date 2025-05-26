@@ -60,16 +60,19 @@ y = df['Survived']
 print("Dataset is ready for machine learning!")
 print(f"Shape: {X.shape}")
 print(f"Features: {list(X.columns)}")
----
+```
+
+
+
 
 | Description           | Screenshot                                                                                       |
 | --------------------- | ------------------------------------------------------------------------------------------------ |
-| Data Info             | ![Screenshot 1](https://github.com/user-attachments/assets/a41853be-3317-49c7-b59b-7ed7bcb397b6) |
-| Filled Missing Values | ![Screenshot 2](https://github.com/user-attachments/assets/0b8281fa-7d25-4115-84fa-fa18b2ce9646) |
-| Cabin Feature         | ![Screenshot 3](https://github.com/user-attachments/assets/fefb533a-0cb1-4c33-8ec1-3eef5a4eca85) |
-| Encoding Categorical  | ![Screenshot 4](https://github.com/user-attachments/assets/6a8666a3-5aa9-4692-bd04-66cfd9509aef) |
-| Feature Scaling       | ![Screenshot 5](https://github.com/user-attachments/assets/96a35222-58ee-4c1a-896f-70d42ed2c766) |
-| Final Output          | ![Screenshot 6](https://github.com/user-attachments/assets/2088ea51-faf7-497f-9ab8-4bcf6fc2fe48) |
+| Data Info             | ![Screenshot 2025-05-26 222416](https://github.com/user-attachments/assets/de1fac12-31c0-4d61-b1ef-3abf0fc8bb19)|
+| Filled Missing Values | ![Screenshot 2025-05-26 222427](https://github.com/user-attachments/assets/fcd91866-80c1-4a97-93fc-b2d1f07cb88f)|
+| Cabin Feature         | ![Screenshot 2025-05-26 222437](https://github.com/user-attachments/assets/8c43a357-4df8-462d-a3d3-ff32b48f757a)|
+| Encoding Categorical  |  ![Screenshot 2025-05-26 222448](https://github.com/user-attachments/assets/656e8560-bb26-45aa-b8a9-4742b3cdc8bb)|
+| Feature Scaling       | ![Screenshot 2025-05-26 222500](https://github.com/user-attachments/assets/0636a68f-8552-4fcf-8075-24005b91f669)|
+| Final Output          | ![Screenshot 2025-05-26 222511](https://github.com/user-attachments/assets/330a3a2e-ae3c-4ebe-8f3b-62f6759f9b20)|
 
 ## 📁 Dataset Source
 - [Kaggle Titanic Dataset](https://www.kaggle.com/competitions/titanic/data)
