@@ -1,4 +1,4 @@
-# MSME_aiml_iNTERN
+# MSME_AIML
 
 Task  1 Result
 Key Features:
