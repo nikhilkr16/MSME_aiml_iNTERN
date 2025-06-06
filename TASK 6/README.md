@@ -315,6 +315,6 @@ The project serves as an excellent learning resource for understanding:
 
 ---
 
-**Author**: AIML Intern Project  
+**Author**: NIKHIL KUMAR  
 **Date**: June 2025  
 **Version**: 1.0 
