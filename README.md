@@ -1,9 +1,10 @@
-# AI/ML Internship Tasks - Comprehensive Overview (Tasks 2-8)
+# AI/ML Internship Tasks - Comprehensive Overview (Tasks 1-8)
 
-This repository contains a complete machine learning journey from exploratory data analysis to advanced algorithms. Each task builds upon previous concepts while introducing new techniques and methodologies.
+This repository contains a complete machine learning journey from data preprocessing to advanced algorithms. Each task builds upon previous concepts while introducing new techniques and methodologies.
 
 ## 📋 Table of Contents
 
+- [Task 1: Data Preprocessing Pipeline](#task-1-data-preprocessing-pipeline)
 - [Task 2: Exploratory Data Analysis (EDA)](#task-2-exploratory-data-analysis-eda)
 - [Task 3: Linear Regression Analysis](#task-3-linear-regression-analysis)
 - [Task 4: Logistic Regression Classification](#task-4-logistic-regression-classification)
@@ -14,6 +15,66 @@ This repository contains a complete machine learning journey from exploratory da
 - [Technologies & Tools](#technologies--tools)
 - [Learning Progression](#learning-progression)
 - [Getting Started](#getting-started)
+
+---
+
+## Task 1: Data Preprocessing Pipeline
+
+**📂 Directory**: `TASK 1/`  
+**🎯 Objective**: Build a comprehensive data preprocessing pipeline for the Titanic dataset
+
+### Key Features
+- **Dataset**: Titanic passenger data (891 passengers)
+- **Missing Value Handling**: Systematic approach to data cleaning
+- **Feature Engineering**: Creating new meaningful features
+- **Data Transformation**: Encoding categorical variables and scaling numerical features
+
+### Technologies Used
+- **Pandas** - Data manipulation and cleaning
+- **NumPy** - Numerical operations
+- **Scikit-learn** - StandardScaler for feature normalization
+
+### Preprocessing Pipeline
+
+#### 1. **Missing Value Treatment**
+- **Age**: Filled with mean value (logical for continuous variable)
+- **Embarked**: Filled with most frequent value (mode for categorical)
+- **Cabin**: Transformed to binary feature `HasCabin` (presence/absence indicator)
+
+#### 2. **Feature Engineering**
+- **HasCabin**: Binary indicator (0/1) for cabin information availability
+- **Categorical Encoding**: One-hot encoding for Sex and Embarked
+- **Feature Selection**: Retained most predictive features
+
+#### 3. **Data Transformation**
+- **Standardization**: Applied StandardScaler to numerical features
+- **Outlier Handling**: Used IQR method for fare outlier detection
+- **Feature Scaling**: Normalized Age, Fare, SibSp, Parch
+
+### Final Feature Set
+```python
+Features: ['Pclass', 'Age', 'SibSp', 'Parch', 'Fare', 'Sex_male',
+           'Embarked_C', 'Embarked_Q', 'Embarked_S', 'HasCabin']
+Target: 'Survived'
+```
+
+### Key Insights
+- **Data Quality**: Systematic handling of 19.9% missing age values
+- **Feature Engineering**: Cabin presence proved to be a valuable predictor
+- **Encoding Strategy**: One-hot encoding preserved categorical information
+- **Scaling Impact**: Standardization essential for distance-based algorithms
+
+### Preprocessing Results
+- **Original Shape**: (891, 12) → **Processed Shape**: (889, 10) features
+- **Missing Values**: Eliminated from all selected features
+- **Feature Types**: All numerical (ready for ML algorithms)
+- **Data Integrity**: Maintained passenger relationships and survival patterns
+
+### Business Value
+- **Data Quality**: Clean, consistent dataset for downstream analysis
+- **Feature Engineering**: Enhanced predictive power through thoughtful transformations
+- **Scalability**: Reusable preprocessing pipeline for similar datasets
+- **ML Readiness**: Formatted data optimized for machine learning algorithms
 
 ---
 
@@ -259,7 +320,8 @@ This repository contains a complete machine learning journey from exploratory da
 
 ## 📈 Learning Progression
 
-### Phase 1: Foundation (Tasks 2-3)
+### Phase 1: Foundation (Tasks 1-3)
+- **Data Preprocessing**: Cleaning, transforming, and preparing data
 - **Data Exploration**: Understanding datasets through EDA
 - **Statistical Analysis**: Descriptive statistics and correlations
 - **Basic Modeling**: Linear regression concepts
@@ -310,7 +372,8 @@ Git
    ```
 
 ### Quick Start Guide
-- **Beginners**: Start with Task 2 (EDA) to understand data analysis
+- **Complete Beginners**: Start with Task 1 (Preprocessing) to learn data preparation
+- **Data Analysis Focus**: Move to Task 2 (EDA) to understand data exploration
 - **Intermediate**: Jump to Task 5 (Tree Methods) for practical ML
 - **Advanced**: Focus on Task 7 (SVM) for algorithmic depth
 - **Business Focus**: Task 8 (Clustering) for practical applications
@@ -321,6 +384,7 @@ Git
 
 | Task | Dataset | Samples | Features | Domain | Target |
 |------|---------|---------|----------|--------|--------|
+| 1 | Titanic | 891 | 12→10 | Transportation | Survival |
 | 2 | Titanic | 891 | 12 | Transportation | Survival |
 | 3 | Housing | 545 | 13 | Real Estate | Price |
 | 4 | Breast Cancer | 569 | 30 | Medical | Diagnosis |
