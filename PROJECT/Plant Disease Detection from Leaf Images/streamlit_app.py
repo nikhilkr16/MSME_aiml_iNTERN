@@ -1,15 +1,22 @@
 import streamlit as st
 import numpy as np
 from PIL import Image
-import plotly.express as px
-from utils import PlantDiseasePredictor
-import pandas as pd
 import os
+from utils import PlantDiseasePredictor
+
+# Try importing optional dependencies
+try:
+    import plotly.express as px
+    import pandas as pd
+    PLOTLY_AVAILABLE = True
+except ImportError:
+    PLOTLY_AVAILABLE = False
+    st.warning("Some visualization features are disabled. Install plotly and pandas for full functionality.")
 
 # Page configuration
 st.set_page_config(
     page_title="Plant Disease Detection",
-    page_icon="��",
+    page_icon="🌱",
     layout="wide"
 )
 
@@ -102,14 +109,20 @@ def main():
             st.info(f"📊 **Confidence:** {confidence:.2%}")
             
             # Confidence chart
-            all_preds = result['all_predictions']
-            df = pd.DataFrame([
-                {'Disease': k.replace('_', ' '), 'Confidence': v * 100} 
-                for k, v in all_preds.items()
-            ]).sort_values('Confidence', ascending=True)
-            
-            fig = px.bar(df, x='Confidence', y='Disease', orientation='h')
-            st.plotly_chart(fig, use_container_width=True)
+            if PLOTLY_AVAILABLE:
+                all_preds = result['all_predictions']
+                df = pd.DataFrame([
+                    {'Disease': k.replace('_', ' '), 'Confidence': v * 100} 
+                    for k, v in all_preds.items()
+                ]).sort_values('Confidence', ascending=True)
+                
+                fig = px.bar(df, x='Confidence', y='Disease', orientation='h')
+                st.plotly_chart(fig, use_container_width=True)
+            else:
+                # Simple text-based display if plotly is not available
+                st.subheader("Top Predictions:")
+                for disease, conf in result['top_3_predictions']:
+                    st.write(f"- {disease.replace('_', ' ')}: {conf:.2%}")
             
             # Disease info
             disease_info = predictor.get_disease_info(predicted_class)
